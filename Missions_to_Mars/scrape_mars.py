@@ -92,6 +92,7 @@ def scrape():
             time.sleep(1)
             # Click on 'Open' to get to full image stored on page
             browser.links.find_by_partial_text('Open').click()
+            time.sleep(1)
             
             # Pull html
             hemi_html = browser.html
