@@ -20,7 +20,7 @@
     <!-- News Title -->
     <div class="row">
       <div class="col-md-12">
-        <h3 class='heading'>Latest Mars News</h3>
+        <h2 class='heading'>Latest Mars News</h2>
         <h4>{{mars_data.news_t}}</h4>
         <small>{{mars_data.news_p}}</small>
       </div>
@@ -29,8 +29,9 @@
     <!--Image and Table-->
     <div class='row'>
         <div class='col-md-8'>
-            <h3 class='heading'>Featured Mars Image</h3>
+            <h2 class='heading'>Featured Mars Image</h2>
             <img class='img-responsive' src='{{mars_data.feat_img_url}}'/>
+            <br/>
         </div>
         <div class='col-md-4'>
             <h3 class='heading'>Mars Facts</h3>
@@ -41,9 +42,18 @@
     <!--Hemisphere Images-->
     <div class='row'>
         <div class='col-md-12'>
-            <h3 class='heading'>Mars Hemispheres</h3>
+            <h2 class='heading'>Mars Hemispheres</h2>
             <hr/>
-            
+        {% for img in mars_data.hemi_img_urls %}
+        <div class='col-lg-3'>
+          <div class="card" style="width: 20rem;">
+            <div class="card-body">
+              <img class='card-img-top img-responsive' src='{{img.img_url}}'/>
+              <h4 class="card-title">{{ img.title }}</h4>
+            </div>
+          </div>
+        </div>
+        {% endfor %}  
         </div>
     </div>
   </div>
